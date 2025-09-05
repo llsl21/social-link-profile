@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/static/Inter-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Intel";
+  src: url("/assets/fonts/static/Inter-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Intel";
+  src: url("/assets/fonts/static/Inter-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+:root {
+  --green: hsl(75deg, 94%, 57%);
+  --white: hsl(0deg, 0%, 100%);
+  --grey700: hsl(0deg, 0%, 20%);
+  --grey800: hsl(0deg, 0%, 12%);
+  --grey900: hsl(0deg, 0%, 8%);
+
+  --text-preset-1: normal 600 calc(24 / 16 * 1rem) / 1.5 "Inter", sans-serif;
+  --text-preset-2: normal 400 calc(14 / 16 * 1rem) / 1.5 "Inter", sans-serif;
+  --text-preset-2-bold: normal 700 calc(14 / 16 * 1rem) / 1.5 "Inter",
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--grey900);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card {
+  flex-basis: 384px;
+  padding: 40px;
+  background-color: var(--grey800);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.card__avatar-wrapper {
+  width: 88px;
+  aspect-ratio: 1 / 1;
+  align-self: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card__personal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__name {
+  font: var(--text-preset-1);
+  color: var(--white);
+}
+
+.card__address {
+  color: var(--green);
+  font: var(--text-preset-2-bold);
+}
+
+.card__phrase {
+  color: var(--white);
+  font: var(--text-preset-2);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-link {
+  background-color: var(--grey700);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.social-link-anchor {
+  display: block;
+  padding-block: 12px;
+  text-decoration: none;
+  color: white;
+  font: var(--text-preset-2-bold);
+  transition: color 0.5s, background-color 0.5s;
+
+  &:hover {
+    background-color: var(--green);
+    color: var(--grey700);
+  }
+}
+
+@media (width <= 375px) {
+  .card {
+    padding: 24px;
+  }
+}
